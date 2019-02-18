@@ -3,6 +3,9 @@
  */
 
 $(document).ready(function () {
+    $('.hide').css("display", localStorage.getItem("hide"));
+    $('#carusel-container').css("display", localStorage.getItem("carusel"));
+
 
     $(".smallPic").each(function (index, element) {
         $(element).click(show);
@@ -34,19 +37,26 @@ $(document).ready(function () {
     function hidePopup() {
         $('.hide').each(function (index, element) {
             if ($(element).css('display') !== 'none') {
-                console.log($(element).css("display","none"));
+                $(element).css("display","none");
                 $('.description-head').css("text-align", "center");
                 $('#carusel-container').css("display","block");
+
+                localStorage.setItem("hide", "none");
+                localStorage.setItem("carusel", "block");
             }
         });
+
     }
 
     function show() {
         $('.hide').each(function (index, element) {
             if ($(element).css('display') !== 'block') {
-                console.log($(element).css("display","block"));
+                $(element).css("display","block");
                 $('.description-head').css("text-align", "left");
                 $('#carusel-container').css("display","none");
+
+                localStorage.setItem("hide", "block");
+                localStorage.setItem("carusel", "none");
             }
         });
     }
