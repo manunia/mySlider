@@ -3,6 +3,16 @@
  */
 
 $(document).ready(function () {
+
+    var limit = 183 * 24 * 3600 * 1000; // полгода
+    var localStorageInitTime = localStorage.getItem('localStorageInitTime');
+    if (localStorageInitTime === null) {
+        localStorage.setItem('localStorageInitTime', +new Date());
+    } else if(+new Date() - localStorageInitTime > limit) {
+        localStorage.clear();
+        localStorage.setItem('localStorageInitTime', +new Date());
+    }
+
     $('.hide').css("display", localStorage.getItem("hide"));
     $('#carusel-container').css("display", localStorage.getItem("carusel"));
 
