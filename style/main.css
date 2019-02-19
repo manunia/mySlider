@@ -38,7 +38,7 @@ header {
     font-size: 22px;
     font-family: "Roboto Slab";
     color: rgb(13, 51, 81);
-    line-height: 2.667;
+    line-height: 1.6;
     text-align: left;
 }
 
@@ -135,7 +135,7 @@ img {
 
 .container {
     position: relative;
-    top: -104px;
+    top: -100px;
     display: none;
 }
 
@@ -150,4 +150,12 @@ img {
 
 .carousel-control-next-icon {
     background-image: url("../images/icons/right-chevron.svg");
+}
+
+.carusel-item-head {
+    position: fixed;
+    top: 48px;
+    font-size: 12px;
+    right: 409px;
+    width: 37%;
 }

@@ -35,7 +35,6 @@ $(document).ready(function () {
 
         //замена описания
         $('.description').each(function (index, element) {
-
             if ((index + 1) != imageNameParts[1]) {
                 $(element).css("display","none");
             } else {
@@ -48,6 +47,7 @@ $(document).ready(function () {
         $('.hide').each(function (index, element) {
             if ($(element).css('display') !== 'none') {
                 $(element).css("display","none");
+                $('.description-bold').css("text-align", "center");
                 $('.description-head').css("text-align", "center");
                 $('#carusel-container').css("display","block");
 
@@ -55,13 +55,13 @@ $(document).ready(function () {
                 localStorage.setItem("carusel", "block");
             }
         });
-
     }
 
     function show() {
         $('.hide').each(function (index, element) {
             if ($(element).css('display') !== 'block') {
                 $(element).css("display","block");
+                $('.description-bold').css("text-align", "left");
                 $('.description-head').css("text-align", "left");
                 $('#carusel-container').css("display","none");
 
@@ -70,13 +70,8 @@ $(document).ready(function () {
             }
         });
     }
-
-
+    
     $('#x').click(hidePopup);
-
     $('#popup').click(show);
-
-
-
-
+    
 })
