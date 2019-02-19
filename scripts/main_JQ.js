@@ -15,6 +15,8 @@ $(document).ready(function () {
 
     $('.hide').css("display", localStorage.getItem("hide"));
     $('#carusel-container').css("display", localStorage.getItem("carusel"));
+    $('.description-bold').css("text-align", localStorage.getItem("description-head"));
+    $('.description-head').css("text-align", localStorage.getItem("description-head"));
 
 
     $(".smallPic").each(function (index, element) {
@@ -51,6 +53,7 @@ $(document).ready(function () {
                 $('.description-head').css("text-align", "center");
                 $('#carusel-container').css("display","block");
 
+                localStorage.setItem("description-head", "center");
                 localStorage.setItem("hide", "none");
                 localStorage.setItem("carusel", "block");
             }
@@ -65,6 +68,7 @@ $(document).ready(function () {
                 $('.description-head').css("text-align", "left");
                 $('#carusel-container').css("display","none");
 
+                localStorage.setItem("description-head", "left");
                 localStorage.setItem("hide", "block");
                 localStorage.setItem("carusel", "none");
             }
